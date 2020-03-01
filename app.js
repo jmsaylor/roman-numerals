@@ -26,11 +26,17 @@ class RomanNumeral {
     for (let x = 0; x < this.hundred; x++) {
       numeral += "C";
     }
-    for (let x = 0; x < this.fifty; x++) {
-      numeral += "D";
-    }
-    for (let x = 0; x < this.ten; x++) {
-      numeral += "X";
+    if (this.ten == 4) {
+      numeral += "XD";
+    } else if (this.ten == 9) {
+      numeral += "XC";
+    } else {
+      for (let x = 0; x < this.fifty; x++) {
+        numeral += "D";
+      }
+      for (let x = 0; x < this.ten; x++) {
+        numeral += "X";
+      }
     }
     if (this.one == 4 && this.five == 0) {
       numeral += "IV";
